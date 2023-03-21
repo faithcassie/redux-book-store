@@ -12,7 +12,9 @@ const BookDetailPage = () => {
   const params = useParams();
   const bookId = params.id;
   const dispatch = useDispatch();
-  const { data, isLoading, toastMessage } = useSelector((state) => state.book);
+  const { detail, isLoading, toastMessage } = useSelector(
+    (state) => state.book
+  );
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,37 +36,37 @@ const BookDetailPage = () => {
           sx={{ border: "1px solid black" }}
         >
           <Grid item md={4}>
-            {data.imageLink && (
+            {detail.imageLink && (
               <img
                 width="100%"
-                src={`${BACKEND_API}/${data.imageLink}`}
+                src={`${BACKEND_API}/${detail.imageLink}`}
                 alt=""
               />
             )}
           </Grid>
           <Grid item md={8}>
-            {data && (
+            {detail && (
               <Stack>
-                <h2>{data.title}</h2>
+                <h2>{detail.title}</h2>
                 <Typography variant="body1">
-                  <strong>Author:</strong> {data.author}
+                  <strong>Author:</strong> {detail.author}
                 </Typography>
                 <Typography variant="body1">
-                  <strong>Year:</strong> {data.year}
+                  <strong>Year:</strong> {detail.year}
                 </Typography>
                 <Typography variant="body1">
-                  <strong>Country:</strong> {data.country}
+                  <strong>Country:</strong> {detail.country}
                 </Typography>
                 <Typography variant="body1">
-                  <strong>Pages:</strong> {data.pages}
+                  <strong>Pages:</strong> {detail.pages}
                 </Typography>
                 <Typography variant="body1">
-                  <strong>Language:</strong> {data.language}
+                  <strong>Language:</strong> {detail.language}
                 </Typography>
                 <Button
                   variant="outlined"
                   sx={{ width: "fit-content" }}
-                  onClick={() => dispatch(addToReadingList(data))}
+                  onClick={() => dispatch(addToReadingList(detail))}
                 >
                   Add to Reading List
                 </Button>

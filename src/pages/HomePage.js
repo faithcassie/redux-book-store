@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchAllBooks,
-  fetchBookDetail,
-  updateQuery,
-} from "../data/bookSlice.js";
+import { fetchAllBooks, updateQuery } from "../data/bookSlice.js";
 import { ClipLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
 import PaginationBar from "../components/PaginationBar";
 import SearchForm from "../components/SearchForm";
-import api from "../apiService";
 import { FormProvider } from "../form";
 import { useForm } from "react-hook-form";
 import {
@@ -27,13 +22,8 @@ import {
 const BACKEND_API = process.env.REACT_APP_BACKEND_API;
 
 const HomePage = () => {
-  // const [books, setBooks] = useState([]);
-  // const [pageNum, setPageNum] = useState(1);
   const totalPage = 10;
-  const limit = 10;
-  // const [loading, setLoading] = useState(false);
-  // const [query, setQuery] = useState("");
-  // const [errorMessage, setErrorMessage] = useState("");
+  // const limit = 10;
   const { books, isLoading, errorMessage, query, pageNum } = useSelector(
     (state) => state.book
   );

@@ -4,9 +4,9 @@ import { toast } from "react-toastify";
 
 export const addToReadingList = createAsyncThunk(
   "add-to-favorites",
-  async (book) => {
+  async (detail) => {
     try {
-      const res = await api.post(`/favorites`, book);
+      const res = await api.post(`/favorites`, detail);
       toast.success("The book has been added to the reading list!");
       return res.data;
     } catch (error) {
@@ -71,5 +71,5 @@ const favoriteSlice = createSlice({
   },
 });
 
-console.log(favoriteSlice);
+// console.log(favoriteSlice);
 export default favoriteSlice;

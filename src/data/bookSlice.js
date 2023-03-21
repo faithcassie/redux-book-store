@@ -23,7 +23,7 @@ export const fetchAllBooks = createAsyncThunk(
 const bookSlice = createSlice({
   name: "book",
   initialState: {
-    data: [],
+    detail: [],
     isLoading: false,
     pageNum: 1,
     books: [],
@@ -41,7 +41,7 @@ const bookSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchBookDetail.fulfilled, (state, action) => {
-        state.data = action.payload;
+        state.detail = action.payload;
         state.isLoading = false;
       })
       .addCase(fetchBookDetail.pending, (state) => {
