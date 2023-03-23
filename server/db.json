@@ -1,28 +1,5 @@
 {
-  "favorites": [
-    {
-      "author": "Unknown",
-      "country": "India/Iran/Iraq/Egypt/Tajikistan",
-      "imageLink": "images/one-thousand-and-one-nights.jpg",
-      "language": "Arabic",
-      "link": "https://en.wikipedia.org/wiki/One_Thousand_and_One_Nights\n",
-      "pages": 288,
-      "title": "One Thousand and One Nights",
-      "year": 1200,
-      "id": "BFECD288E75"
-    },
-    {
-      "author": "Unknown",
-      "country": "Iceland",
-      "imageLink": "images/njals-saga.jpg",
-      "language": "Old Norse",
-      "link": "https://en.wikipedia.org/wiki/Nj%C3%A1ls_saga\n",
-      "pages": 384,
-      "title": "Njál's Saga",
-      "year": 1350,
-      "id": "DD6341E90F6"
-    }
-  ],
+  "favorites": [],
   "books": [
     {
       "author": "Chinua Achebe",
