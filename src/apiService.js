@@ -23,8 +23,6 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
   (response) => {
-    response.headers["Access-Control-Allow-Origin"] =
-      "https://sunny-torte-59831a.netlify.app";
     console.log("Response:", response);
     return response;
   },
