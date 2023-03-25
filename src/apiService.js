@@ -13,6 +13,10 @@ const api = axios.create({
 api.interceptors.request.use(
   (request) => {
     console.log("Starting Request", request);
+    res.setHeader(
+      "Access-Control-Allow-Origin",
+      "https://sunny-torte-59831a.netlify.app"
+    );
     return request;
   },
   function (error) {
