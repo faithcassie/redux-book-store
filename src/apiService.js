@@ -4,6 +4,7 @@ const api = axios.create({
   baseURL: process.env.REACT_APP_BACKEND_API,
   headers: {
     "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "https://sunny-torte-59831a.netlify.app",
   },
 });
 
