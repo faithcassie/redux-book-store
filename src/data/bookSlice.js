@@ -13,10 +13,13 @@ export const fetchAllBooks = createAsyncThunk(
   async ({ query, pageNum }) => {
     let url = `/books?_page=${pageNum}&_limit=10`;
     if (query) url += `&q=${query}`;
-    console.log(query);
-    const res = await api.get(url);
-    console.log(res);
-    return res.data;
+    try {
+      const res = await api.get(url);
+      return res.data;
+    } catch (error) {
+      console.error("Error fetching data from server:", error);
+      alert("Error fetching data from server. Please try again later.");
+    }
   }
 );
 
