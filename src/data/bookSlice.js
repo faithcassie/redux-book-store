@@ -54,7 +54,7 @@ const bookSlice = createSlice({
       });
     builder
       .addCase(fetchAllBooks.fulfilled, (state, action) => {
-        state.books = action.payload;
+        state.books = action.payload ? action.payload : null;
         state.isLoading = false;
       })
       .addCase(fetchAllBooks.pending, (state) => {
