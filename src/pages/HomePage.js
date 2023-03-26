@@ -80,30 +80,34 @@ const HomePage = () => {
             justifyContent="space-around"
             flexWrap="wrap"
           >
-            {books.map((book) => (
-              <Card
-                key={book.id}
-                onClick={() => handleClickBook(book.id)}
-                sx={{
-                  width: "12rem",
-                  height: "27rem",
-                  marginBottom: "2rem",
-                }}
-              >
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    image={`${BACKEND_API}/${book.imageLink}`}
-                    alt={`${book.title}`}
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {`${book.title}`}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            ))}
+            {books ? (
+              books.map((book) => (
+                <Card
+                  key={book.id}
+                  onClick={() => handleClickBook(book.id)}
+                  sx={{
+                    width: "12rem",
+                    height: "27rem",
+                    marginBottom: "2rem",
+                  }}
+                >
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      image={`${BACKEND_API}/${book.imageLink}`}
+                      alt={`${book.title}`}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {`${book.title}`}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              ))
+            ) : (
+              <h3>Error</h3>
+            )}
           </Stack>
         )}
       </div>

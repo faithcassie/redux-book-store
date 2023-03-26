@@ -18,7 +18,6 @@ export const fetchAllBooks = createAsyncThunk(
       return res.data;
     } catch (error) {
       console.error("Error fetching data from server:", error);
-      alert("Error fetching data from server. Please try again later.");
     }
   }
 );
